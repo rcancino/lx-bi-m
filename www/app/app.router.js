@@ -42,6 +42,24 @@
         }
       }
     })
+    .state('papel_bi1_margen', {
+      url: '/papel_bi1_margen',
+      parent: 'tabs',
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelbi1/papelbi1.margen.html'
+        }
+      }
+    })
+    .state('papel_bi1_toneladas', {
+      url: '/papel_bi1_toneladas',
+      parent: 'tabs',
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelbi1/papelbi1.toneladas.html'
+        }
+      }
+    })
     // Tableros
     .state('tableros', {
       url: '/tableros',
@@ -54,7 +72,7 @@
       }
     });
 
-    $urlRouterProvider.otherwise('/tabs/tableros');
+    $urlRouterProvider.otherwise('/tabs/indicadores');
   }
 
 })();

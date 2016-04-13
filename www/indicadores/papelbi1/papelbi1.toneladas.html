@@ -1,0 +1,39 @@
+<ion-view>
+  <ion-nav-title><i class="icon ion-social-buffer "></i> Papel BI 1</ion-nav-title>
+  
+  <ion-content class="padding">
+    
+    <ion-item class="item-divider text-center">Toneladas</ion-item>
+    <label class="item item-input item-select">
+        <div class="input-label">
+          Tipo
+        </div>
+        <select>
+          <option selected>Semanal</option>
+          <option>Mensual</option>
+          <option>Anual</option>
+        </select>
+      </label>
+    <ion-list>
+      <ion-item>
+        Venta (Toneladas) <span class="badge">{{260}}</span>
+      </ion-item>
+      <ion-item>
+        Meta <span class="badge">{{326}}</span>
+      </ion-item>
+      <ion-item>
+        Diferencia <span class="badge badge-assertive">{{-65}}</span>
+      </ion-item>
+      <ion-item>
+        (%) <span class="badge badge-assertive">{{-19}}%</span>
+      </ion-item>
+      <ion-item>
+        KPI <span class="badge badge-energized">{{.045}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-dark">
+    <button class="button button-clear pull-right">Calendario</button>
+  </ion-footer-bar>
+</ion-view>
