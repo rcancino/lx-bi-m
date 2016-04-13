@@ -1,0 +1,17 @@
+/* Empty. Add your own CSS if you like */
+.item .col {
+	// background-color: lightgrey;
+	//border-style: solid;
+	//border-width: 1px;
+}
+.header .col {
+	background-color:lightgrey;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: center;
+	padding: 2px;
+}
+.item .col {
+    //font-size: 13px;
+    text-align: center;
+}
