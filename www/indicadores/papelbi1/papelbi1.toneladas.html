@@ -4,22 +4,34 @@
   <ion-content class="padding">
     
     <ion-item class="item-divider text-center">Toneladas</ion-item>
-    <label class="item item-input item-select">
-        <div class="input-label">
-          Tipo
+      <ion-item>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col">Semanal</div>
+          <div class="col">Mensual</div>
+          <div class="col">Anual</div>
         </div>
-        <select>
-          <option selected>Semanal</option>
-          <option>Mensual</option>
-          <option>Anual</option>
-        </select>
-      </label>
+      </ion-item>
     <ion-list>
       <ion-item>
-        Venta (Toneladas) <span class="badge">{{260}}</span>
+        <div class="row">
+          <div class="col"><span class="text-left">Toneladas</span></div>
+          <div class="col">260</div>
+          <div class="col">2729</div>
+          <div class="col">9355</div>
+        </div>
+        
+        <!-- <span>{{260}}</span> -->
+        <!-- <span class="badge">{{260}}</span> -->
       </ion-item>
       <ion-item>
-        Meta <span class="badge">{{326}}</span>
+        <div class="row">
+          <div class="col"><span class="text-left">Meta</span></div>
+          <div class="col">326</div>
+          <div class="col">3097</div>
+          <div class="col">10597</div>
+        </div>
+        <!-- Meta <span class="badge">{{326}}</span> -->
       </ion-item>
       <ion-item>
         Diferencia <span class="badge badge-assertive">{{-65}}</span>
