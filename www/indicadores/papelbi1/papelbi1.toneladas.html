@@ -2,25 +2,24 @@
   <ion-nav-title><i class="icon ion-social-buffer "></i> Papel BI 1</ion-nav-title>
   
   <ion-content >
+    
+    <ion-list type="card">
+      <ion-item class="item-divider text-center">Toneladas</ion-item>
+      <ion-item class="row">
+        <span class="col"></span>
+        <span class="col">Semanal</span>
+        <span class="col">Mensual</span>
+        <span class="col">Anual</span>
+      </ion-item>
 
-    <div class="row header">
-      <div class="col"></div>
-      <div class="col">Semanal</div>
-      <div class="col">Mensual</div>
-      <div class="col">Anual</div>
-    </div>
-    <div class="row">
-      <div class="col">Toneladas</div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-    </div>
-    
-    <!-- <ion-item class="item-divider text-center">Toneladas</ion-item>
-    <ion-item>
-      
-    </ion-item> -->
-    
+      <ion-item class="row">
+        <span class="col">Venta</span>
+        <span class="col">{{5670919 | number : 0}}</span>
+        <span class="col">{{5670919 | number : 0}}</span>
+        <span class="col">{{5670919 | number : 0}}</span>
+      </ion-item>
+    </ion-list>
+
   </ion-content>
 
   <ion-footer-bar align-title="center" class="bar-dark">

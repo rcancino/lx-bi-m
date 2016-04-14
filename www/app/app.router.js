@@ -42,6 +42,20 @@
         }
       }
     })
+    .state('papel_bi1_toneladas', {
+      url: '/papel_bi1_toneladas',
+      parent: 'tabs',
+      data: {
+          title: 'Ventas en toneladas KPI'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelbi1/papelbi.kpi.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
     .state('papel_bi1_margen', {
       url: '/papel_bi1_margen',
       parent: 'tabs',
@@ -51,15 +65,7 @@
         }
       }
     })
-    .state('papel_bi1_toneladas', {
-      url: '/papel_bi1_toneladas',
-      parent: 'tabs',
-      views: {
-        'indicadores-tab': {
-          templateUrl: 'indicadores/papelbi1/papelbi1.toneladas.html'
-        }
-      }
-    })
+    
     // Tableros
     .state('tableros', {
       url: '/tableros',
