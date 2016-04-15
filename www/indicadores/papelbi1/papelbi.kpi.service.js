@@ -10,26 +10,20 @@
   function papelKpiService($log) {
     var indicadores = [
       {
-        tipo: 'Semana',
-        venta: 260,
-        meta: 326,
-        diferencia: 19,
-        kpi: 0.045
-      },
-      {
-        tipo: 'Mes',
-        venta: 2729,
-        meta: 3097,
-        diferencia: -11,
-        kpi: 0.476
-      },
-      {
-        tipo: 'Año',
-        venta: 9355,
-        meta: 10597,
-        diferencia: -11,
-        kpi: 1.680
+        ventaSemanal: 260,
+        ventaMensual: 2729,
+        ventaAnual: 9355,
+        metaSemanal: 326,
+        metaMensual: 3097,
+        metaAnua: 10597,
+        diferenciaSemanal: 19,
+        diferenciaMensual: -11,
+        diferenciaAnual: -11,
+        kpiSemanal: 0.045,
+        kpiMensual: 0.476,
+        kpiAnual: 1.680
       }
+      
     ];
     var service = {
       getIndicadores:getIndicadores 

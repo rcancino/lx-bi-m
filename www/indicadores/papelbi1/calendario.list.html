@@ -1,0 +1,20 @@
+<ion-popover-view class="fit">
+  <ion-header-bar align-title="left" class="bar-black">
+    <!-- <div class="buttons">
+      <button class="button" ng-click="doSomething()">Left Button</button>
+    </div> -->
+    <h1 class="title">Calendarios  KPIs</h1>
+    <!-- <div class="buttons">
+      <button class="button">Right Button</button>
+    </div> -->
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="c in calendarios"
+        ng-click="setCalendario(c);">
+        Sem: {{c.semana}} ({{c.year}}) 
+        {{c.fechaInicial | date : 'dd/MM/yyyy'}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-popover-view>

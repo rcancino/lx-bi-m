@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-    .module('lx-bi', ['ionic']);
+    .module('lx-bi', ['ionic','ngResource']);
 
 })();
 

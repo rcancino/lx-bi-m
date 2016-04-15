@@ -9,37 +9,36 @@
       </ion-item>
       
       <ion-item class="row">
-        <span class="col"></span>
-        <span class="col">Toneladas</span>
-        <span class="col">Meta</span>
-        <span class="col">Ytd</span>
-        <span class="col">KPI</span>
-
+        <span class="col">Tipo</span>
+        <span class="col">Semana</span>
+        <span class="col">Mes</span>
+        <span class="col">Año</span>
       </ion-item>
 
       <ion-item class="row" ng-repeat="indicador in vm.indicadores">
-        <span class="col">{{indicador.tipo}}</span>
-        <span class="col">{{indicador.venta | number : 0}}</span>
-        <span class="col">{{indicador.meta}}</span>
-        <span class="col">{{indicador.diferencia}}</span>
-        <span class="col">{{indicador.kpi}}</span>
+        <span class="col">Venta</span>
+        <span class="col">{{indicador.ventaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.ventaMensual}}</span>
+        <span class="col">{{indicador.ventaAnual}}</span>
       </ion-item>
+
+      <ion-item class="row" ng-repeat="indicador in vm.indicadores">
+        <span class="col">Meta</span>
+        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.metaMensual}}</span>
+        <span class="col">{{indicador.metaAnual}}</span>
+      </ion-item>
+
       
-      <ion-item>
-        <h3 class="text-center">Calificación total:
-          <span class="badge badge-energized"> 2.4</span>
-        </h3>
-      </ion-item>
     </ion-list>
 
   </ion-content>
 
   <ion-footer-bar align-title="center" class="bar-dark">
     <div class="title">
-      Semana:   {{vm.calendario.semana}} ({{vm.calendario.ejercicio}})
+      Semana:   {{vm.calendario.semana}} ({{vm.calendario.year}})
     </div>
-    <button class="button button-clear pull-right icon-right ion-ios-calendar">
-      
-    </button>
+    <button class="button button-clear pull-right icon-right ion-ios-calendar"
+      ng-click="vm.mostrarCalendarios($event)"></button>
   </ion-footer-bar>
 </ion-view>
