@@ -22,7 +22,7 @@
       
       $scope.calendarios = Calendario.query({max:20});
 
-      $ionicPopover.fromTemplateUrl('indicadores/papelbi1/calendario.list.html', {
+      $ionicPopover.fromTemplateUrl('indicadores/papelkpi/calendario.list.html', {
          scope:$scope,
 
       }).then(function(popover) {

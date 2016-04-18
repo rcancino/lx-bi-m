@@ -32,36 +32,42 @@
         }
       }
     })
-    .state('papel_bi1', {
-      url: '/papel_bi1',
+    .state('papelkpi', {
+      url: '/papelkpi/resumen',
       parent: 'tabs',
       views: {
         'indicadores-tab': {
-          url: '/papel_bi1',
-          templateUrl: 'indicadores/papelbi1/papelbi1.html'
+          url: '/papelkpi',
+          templateUrl: 'indicadores/papelkpi/papelKpis.html'
         }
       }
     })
-    .state('papel_bi1_toneladas', {
-      url: '/papel_bi1_toneladas',
+    .state('papelkpiResumen', {
+      url: '/papelkpi/resumen',
+      parent: 'tabs',
+      data: {
+          title: 'Resumen'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumen.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+
+    .state('papelkpiResumenVentas', {
+      url: '/papelkpi/resumen/ventas',
       parent: 'tabs',
       data: {
           title: 'Ventas (TON)'
       },
       views: {
         'indicadores-tab': {
-          templateUrl: 'indicadores/papelbi1/papelbi.kpi.html',
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenVentas.html',
           controller: 'PapelKpiController',
           controllerAs: 'vm'
-        }
-      }
-    })
-    .state('papel_bi1_margen', {
-      url: '/papel_bi1_margen',
-      parent: 'tabs',
-      views: {
-        'indicadores-tab': {
-          templateUrl: 'indicadores/papelbi1/papelbi1.margen.html'
         }
       }
     })
