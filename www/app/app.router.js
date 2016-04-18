@@ -46,7 +46,7 @@
       url: '/papel_bi1_toneladas',
       parent: 'tabs',
       data: {
-          title: 'Ventas en toneladas KPI'
+          title: 'Ventas (TON)'
       },
       views: {
         'indicadores-tab': {

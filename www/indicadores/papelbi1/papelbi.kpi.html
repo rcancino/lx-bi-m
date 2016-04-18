@@ -1,44 +1,80 @@
 <ion-view>
-  <ion-nav-title><i class="icon ion-social-buffer "></i> Papel BI 1</ion-nav-title>
+  <ion-nav-title><i class="icon ion-social-buffer "></i> Papel KPI</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear pull-right icon-right ion-ios-calendar"
+      ng-click="vm.mostrarCalendarios($event)"></button>
+  </ion-nav-buttons>
   
-  <ion-content >
-    
-    <ion-list type="card">
-      <ion-item class="item-divider text-center ">{{vm.title}}
-      <span class="text-right"> Total:{{2.4}}</span>
-      </ion-item>
-      
-      <ion-item class="row">
-        <span class="col">Tipo</span>
+  
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider text-center">
+        {{vm.title}}
+      </div>
+
+      <div class="item  row">
+        <span class="col"></span>
         <span class="col">Semana</span>
         <span class="col">Mes</span>
         <span class="col">Año</span>
-      </ion-item>
-
-      <ion-item class="row" ng-repeat="indicador in vm.indicadores">
+      </div>
+      <div class="item row">
         <span class="col">Venta</span>
-        <span class="col">{{indicador.ventaSemanal | number : 0}}</span>
-        <span class="col">{{indicador.ventaMensual}}</span>
-        <span class="col">{{indicador.ventaAnual}}</span>
-      </ion-item>
-
-      <ion-item class="row" ng-repeat="indicador in vm.indicadores">
+        <span class="col">{{vm.indicador.ventaSemanal | number : 0}}</span>
+        <span class="col">{{vm.indicador.ventaMensual}}</span>
+        <span class="col">{{vm.indicador.ventaAnual}}</span>
+      </div>
+      
+      <div class="item row" >
         <span class="col">Meta</span>
         <span class="col">{{indicador.metaSemanal | number : 0}}</span>
         <span class="col">{{indicador.metaMensual}}</span>
         <span class="col">{{indicador.metaAnual}}</span>
-      </ion-item>
+      </div>
 
+      <div class="item row">
+        <span class="col">Diferencia</span>
+        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.metaMensual}}</span>
+        <span class="col">{{indicador.metaAnual}}</span>
+      </div>
+
+      <div class="item row">
+        <span class="col">Desviación</span>
+        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.metaMensual}}</span>
+        <span class="col">{{indicador.metaAnual}}</span>
+      </div>
+
+      <div class="item row">
+        <span class="col">KPI</span>
+        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.metaMensual}}</span>
+        <span class="col">{{indicador.metaAnual}}</span>
+      </div>
+
+      <div class="item item-avatar">
+        <h2 class="text-center">KPI: 2.5</h2>
+      </div>
       
-    </ion-list>
+    </div>
+   
 
   </ion-content>
-
-  <ion-footer-bar align-title="center" class="bar-dark">
-    <div class="title">
-      Semana:   {{vm.calendario.semana}} ({{vm.calendario.year}})
-    </div>
-    <button class="button button-clear pull-right icon-right ion-ios-calendar"
-      ng-click="vm.mostrarCalendarios($event)"></button>
+  <ion-footer-bar align-title="right" class="bar-stable">
+    
+    <h1 class="title">Sem: {{vm.calendario.semana}} ({{vm.calendario.year}})</h1>
+    <button class="button button-clear"></button>
   </ion-footer-bar>
+  <!-- <ion-footer-bar  class="bar-dark">
+    <h4 class="title">Calificación: 2.5</h4>
+    
+    <div class="buttons" >
+      <button class="button button-clear "
+        ng-click="vm.mostrarCalendarios($event)">
+        Sem: {{vm.calendario.semana}} ({{vm.calendario.year}})
+      </button>
+    </div>
+    
+  </ion-footer-bar> -->
 </ion-view>
