@@ -13,7 +13,7 @@
       <ion-item ng-repeat="c in calendarios"
         ng-click="setCalendario(c);">
         Sem: {{c.semana}} ({{c.year}}) 
-        {{c.fechaInicial | date : 'dd/MM/yyyy'}}
+        {{c.fechaFinal | date : 'dd/MM/yy'}}
       </ion-item>
     </ion-list>
   </ion-content>

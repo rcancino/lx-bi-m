@@ -20,30 +20,46 @@
       </div>
       <div class="item row">
         <span class="col">Venta</span>
-        <span class="col">{{vm.indicador.ventaSemanal | number : 0}}</span>
-        <span class="col">{{vm.indicador.ventaMensual}}</span>
-        <span class="col">{{vm.indicador.ventaAnual}}</span>
+        <span class="col">{{vm.indicador.ventaSemanal | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaMensual | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaAnual | number:2}}</span>
       </div>
       
       <div class="item row" >
         <span class="col">Meta</span>
-        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
-        <span class="col">{{indicador.metaMensual}}</span>
-        <span class="col">{{indicador.metaAnual}}</span>
+        <span class="col">{{vm.indicador.ventaSemanalMeta | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaMensualMeta | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaAnualMeta | number:2}}</span>
       </div>
 
-      <div class="item row">
+      <div class="item row" >
         <span class="col">Diferencia</span>
-        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
-        <span class="col">{{indicador.metaMensual}}</span>
-        <span class="col">{{indicador.metaAnual}}</span>
+        <span class="col"
+          ng-class="vm.indicador.getDiferenciaVentas('semanal')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('semanal') | number:2 }}</span>
+        <span class="col"
+          ng-class="vm.indicador.getDiferenciaVentas('mensual')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('mensual') | number:2 }}
+        </span>
+        <span class="col" 
+          ng-class="vm.indicador.getDiferenciaVentas('anual')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('anual') | number:2 }}
+        </span>
       </div>
 
-      <div class="item row">
+      <div class="item row" >
         <span class="col">Desviación</span>
-        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
-        <span class="col">{{indicador.metaMensual}}</span>
-        <span class="col">{{indicador.metaAnual}}</span>
+        <span class="col"
+          ng-class="vm.indicador.getDesviacionVentas('semanal')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('semanal') | number:2 }} %</span>
+        <span class="col"
+          ng-class="vm.indicador.getDesviacionVentas('mensual')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('mensual') | number:2 }} %
+        </span>
+        <span class="col" 
+          ng-class="vm.indicador.getDesviacionVentas('anual')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('anual') | number:2}} % 
+        </span>
       </div>
 
       <div class="item row">
