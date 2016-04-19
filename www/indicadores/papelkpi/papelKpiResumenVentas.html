@@ -77,10 +77,7 @@
       </div>
 
       <div class="item item-avatar">
-        <h2 class="text-center">KPI: 2.0</h2>
-        <p>
-          {{vm.indicador.kpiSemanal}}  {{vm.indicador.kpiMensual}}  {{vm.indicador.kpiAnual}}  
-        </p>
+        <h2 class="text-center">KPI: {{vm.indicador.getKpiTotalVentas() | number:2}}</h2>
         
       </div>
       

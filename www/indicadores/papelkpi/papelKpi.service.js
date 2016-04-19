@@ -51,13 +51,16 @@
     res.prototype.getKpiVentas = function(argument){
       switch (argument) {
         case 'semanal':
-          return ( (1-this.getDesviacionVentas(argument)/100)*this.kpiSemanal );
+          var ps = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiSemanal );
+          return ps>this.kpiSemanal ? this.kpiSemanal :ps;
           break;
         case 'mensual':
-          return ( this.kpiMensual-(this.getDesviacionVentas(argument)*this.kpiMensual)/100 );
+          var pm = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiMensual );
+          return pm>this.kpiMensual ? this.kpiMensual : pm;
           break;
         case 'anual':
-          return ( this.kpiAnual-(this.getDesviacionVentas(argument)*this.kpiAnual)/100 );
+          var pa = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiAnual );
+          return pa>this.kpiAnual ? this.kpiAnual : pa;
           break;
         default:
           return 0.0
@@ -65,7 +68,9 @@
       }
     };
 
-    res.prototype.getKpi
+    res.prototype.getKpiTotalVentas = function(){
+      return this.getKpiVentas('semanal') + this.getKpiVentas('mensual') + this.getKpiVentas('anual');
+    };  
 
 
     return res;
