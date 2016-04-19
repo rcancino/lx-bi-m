@@ -63,15 +63,25 @@
       </div>
 
       <div class="item row">
-        <span class="col">KPIs</span>
-        <span class="col">{{vm.indicador.getKpiVentas('semanal') | number : 3}}</span>
+        <span class="col">KPIs META</span>
+        <span class="col">{{vm.indicador.kpiSemanal | number : 3}}</span>
         <span class="col">{{vm.indicador.kpiMensual | number : 3}}</span>
         <span class="col">{{vm.indicador.kpiAnual | number : 3}}</span>
       </div>
 
+      <div class="item row">
+        <span class="col">KPIs</span>
+        <span class="col">{{vm.indicador.getKpiVentas('semanal') | number : 3}}</span>
+        <span class="col">{{vm.indicador.getKpiVentas('mensual') | number : 3}}</span>
+        <span class="col">{{vm.indicador.getKpiVentas('anual') | number : 3}}</span>
+      </div>
+
       <div class="item item-avatar">
         <h2 class="text-center">KPI: 2.0</h2>
-        {{vm.indicador.kpiSemanal}}
+        <p>
+          {{vm.indicador.kpiSemanal}}  {{vm.indicador.kpiMensual}}  {{vm.indicador.kpiAnual}}  
+        </p>
+        
       </div>
       
     </div>

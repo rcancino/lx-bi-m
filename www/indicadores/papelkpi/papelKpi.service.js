@@ -51,7 +51,7 @@
     res.prototype.getKpiVentas = function(argument){
       switch (argument) {
         case 'semanal':
-          return ( this.kpiSemanal-(this.getDesviacionVentas(argument)*this.kpiSemanal)/100 );
+          return ( (1-this.getDesviacionVentas(argument)/100)*this.kpiSemanal );
           break;
         case 'mensual':
           return ( this.kpiMensual-(this.getDesviacionVentas(argument)*this.kpiMensual)/100 );
@@ -64,6 +64,8 @@
           break;
       }
     };
+
+    res.prototype.getKpi
 
 
     return res;
