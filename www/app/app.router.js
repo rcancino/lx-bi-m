@@ -71,6 +71,81 @@
         }
       }
     })
+
+    .state('papelkpiResumenMargen', {
+      url: '/papelkpi/resumen/margen',
+      parent: 'tabs',
+      data: {
+          title: 'Margen'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenMargen.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+
+    .state('papelkpiResumenPrecio', {
+      url: '/papelkpi/resumen/precio',
+      parent: 'tabs',
+      data: {
+          title: 'Precio por Kg'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenPrecio.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+
+    .state('papelkpiResumenTickets', {
+      url: '/papelkpi/resumen/tickets',
+      parent: 'tabs',
+      data: {
+          title: 'Tickets de venta'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenTickets.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+
+    .state('papelkpiResumenInventarios', {
+      url: '/papelkpi/resumen/inventarios',
+      parent: 'tabs',
+      data: {
+          title: 'Inventarios'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenInventarios.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+
+    .state('papelkpiResumenAlcances', {
+      url: '/papelkpi/resumen/alcances',
+      parent: 'tabs',
+      data: {
+          title: 'Alcances'
+      },
+      views: {
+        'indicadores-tab': {
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenAlcances.html',
+          controller: 'PapelKpiController',
+          controllerAs: 'vm'
+        }
+      }
+    })
     
     // Tableros
     .state('tableros', {

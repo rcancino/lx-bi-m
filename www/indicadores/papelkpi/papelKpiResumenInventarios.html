@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-nav-title><i class="icon ion-social-buffer "></i> Papel KPI</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear pull-right icon-right ion-ios-calendar"
+      ng-click="vm.mostrarCalendarios($event)"></button>
+  </ion-nav-buttons>
+  
+  
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider text-center">
+        {{vm.title}}
+      </div>
+
+      <div class="item  row">
+        <span class="col"></span>
+        <span class="col">Semana</span>
+        <span class="col">Mes</span>
+        <span class="col">Año</span>
+      </div>
+      
+    </div>
+   
+
+  </ion-content>
+  <ion-footer-bar align-title="right" class="bar-stable">
+    
+    <h1 class="title">Sem: {{vm.calendario.semana}} ({{vm.calendario.year}})</h1>
+    <button class="button button-clear"></button>
+  </ion-footer-bar>
+  
+</ion-view>

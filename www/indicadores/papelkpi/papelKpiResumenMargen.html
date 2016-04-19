@@ -1,0 +1,86 @@
+<ion-view>
+  <ion-nav-title><i class="icon ion-social-buffer "></i> Papel KPI</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear pull-right icon-right ion-ios-calendar"
+      ng-click="vm.mostrarCalendarios($event)"></button>
+  </ion-nav-buttons>
+  
+  
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider text-center">
+        {{vm.title}}
+      </div>
+
+      <div class="item  row">
+        <span class="col"></span>
+        <span class="col">Semana</span>
+        <span class="col">Mes</span>
+        <span class="col">Año</span>
+      </div>
+      <div class="item row">
+        <span class="col">Venta</span>
+        <span class="col">{{vm.indicador.ventaSemanal | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaMensual | number:2}}</span>
+        <span class="col">{{vm.indicador.ventaAnual | number:2}}</span>
+      </div>
+      
+      <div class="item row" >
+        <span class="col">Costo</span>
+        <span class="col">{{vm.indicador.costoSemanalMeta | number:2}}</span>
+        <span class="col">{{vm.indicador.costoMensualMeta | number:2}}</span>
+        <span class="col">{{vm.indicador.costoAnualMeta | number:2}}</span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Utilidad</span>
+        <span class="col"
+          ng-class="vm.indicador.getDiferenciaVentas('semanal')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('semanal') | number:2 }}</span>
+        <span class="col"
+          ng-class="vm.indicador.getDiferenciaVentas('mensual')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('mensual') | number:2 }}
+        </span>
+        <span class="col" 
+          ng-class="vm.indicador.getDiferenciaVentas('anual')<0?'assertive':''">
+          {{vm.indicador.getDiferenciaVentas('anual') | number:2 }}
+        </span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Desviación</span>
+        <span class="col"
+          ng-class="vm.indicador.getDesviacionVentas('semanal')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('semanal') | number:2 }} %</span>
+        <span class="col"
+          ng-class="vm.indicador.getDesviacionVentas('mensual')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('mensual') | number:2 }} %
+        </span>
+        <span class="col" 
+          ng-class="vm.indicador.getDesviacionVentas('anual')<0?'assertive':''">
+          {{vm.indicador.getDesviacionVentas('anual') | number:2}} % 
+        </span>
+      </div>
+
+      <div class="item row">
+        <span class="col">KPI</span>
+        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
+        <span class="col">{{indicador.metaMensual}}</span>
+        <span class="col">{{indicador.metaAnual}}</span>
+      </div>
+
+      <div class="item item-avatar">
+        <h2 class="text-center">KPI: 2.5</h2>
+      </div>
+      
+    </div>
+   
+
+  </ion-content>
+  <ion-footer-bar align-title="right" class="bar-stable">
+    
+    <h1 class="title">Sem: {{vm.calendario.semana}} ({{vm.calendario.year}})</h1>
+    <button class="button button-clear"></button>
+  </ion-footer-bar>
+  
+</ion-view>
