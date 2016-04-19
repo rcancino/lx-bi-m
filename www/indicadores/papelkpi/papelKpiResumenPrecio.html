@@ -18,6 +18,34 @@
         <span class="col">Mes</span>
         <span class="col">Año</span>
       </div>
+
+      <div class="item row" >
+        <span class="col">Costo</span>
+        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Meta</span>
+        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Diferencia</span>
+        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
+        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Dif (%)</span>
+        <span class="col">{{vm.indicador.costoKgSemanal | number:2}} %</span>
+        <span class="col">{{vm.indicador.costoKgMensual | number:2}} %</span>
+        <span class="col">{{vm.indicador.costoKgAnual | number:2}} %</span>
+      </div>
       
     </div>
    

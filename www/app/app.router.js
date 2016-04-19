@@ -132,15 +132,15 @@
       }
     })
 
-    .state('papelkpiResumenAlcances', {
-      url: '/papelkpi/resumen/alcances',
+    .state('papelkpiResumencxc', {
+      url: '/papelkpi/resumen/cxc',
       parent: 'tabs',
       data: {
           title: 'Alcances'
       },
       views: {
         'indicadores-tab': {
-          templateUrl: 'indicadores/papelkpi/papelKpiResumenAlcances.html',
+          templateUrl: 'indicadores/papelkpi/papelKpiResumenCxC.html',
           controller: 'PapelKpiController',
           controllerAs: 'vm'
         }
