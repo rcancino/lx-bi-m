@@ -76,7 +76,7 @@
       url: '/papelkpi/resumen/margen',
       parent: 'tabs',
       data: {
-          title: 'Margen'
+          title: 'Margen '
       },
       views: {
         'indicadores-tab': {

@@ -14,16 +14,16 @@
         'findByCalendario': { method: 'GET',isArray:false}
       });
 
-    res.prototype.getDiferenciaVentas = function(argument){
+    res.prototype.getDiferenciaVentasTon = function(argument){
       switch (argument) {
         case 'semanal':
-          return (this.ventaSemanal - this.ventaSemanalMeta);
+          return (this.ventaSemanalTon - this.ventaSemanalTonMeta);
           break;
         case 'mensual':
-          return (this.ventaMensual - this.ventaMensualMeta);
+          return (this.ventaMensualTon - this.ventaMensualTonMeta);
           break;
         case 'anual':
-          return (this.ventaAnual - this.ventaAnualMeta);
+          return (this.ventaAnualTon - this.ventaAnualTonMeta);
           break;
         default:
           return 0.0
@@ -31,35 +31,97 @@
       }
     };
 
-    res.prototype.getDesviacionVentas = function(argument){
+    res.prototype.getDesviacionVentasTon = function(argument){
       switch (argument) {
         case 'semanal':
-          return ( (this.getDiferenciaVentas(argument)/this.ventaSemanal) * 100);
+          return ( (this.getDiferenciaVentasTon(argument)/this.ventaSemanalTon) * 100);
           break;
         case 'mensual':
-          return ( (this.getDiferenciaVentas(argument)/this.ventaMensual) * 100);
+          return ( (this.getDiferenciaVentasTon(argument)/this.ventaMensualTon) * 100);
           break;
         case 'anual':
-          return ( (this.getDiferenciaVentas(argument)/this.ventaAnual) * 100);
+          return ( (this.getDiferenciaVentasTon(argument)/this.ventaAnualTon) * 100);
           break;
         default:
           return 0.0
           break;
       }
     };
+
+    res.prototype.getUtilidad = function(argument){
+      switch (argument) {
+        case 'semanal':
+          return (this.ventaSemanal - this.costoSemanal);
+          break;
+        case 'mensual':
+          return (this.ventaMensual - this.costoMensual);
+          break;
+        case 'anual':
+          return (this.ventaAnual - this.costoAnual);
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
+    res.prototype.getMargen = function(argument){
+      switch (argument) {
+        case 'semanal':
+          return   ( this.getUtilidad(argument) / this.costoSemanal) * 100 ;
+          break;
+        case 'mensual':
+          return   ( this.getUtilidad(argument) / this.costoMensual) * 100 ;
+          break;
+        case 'anual':
+          return   ( this.getUtilidad(argument) / this.costoAnual) * 100 ;
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
+    res.prototype.getKpiMargen = function(argument){
+      switch (argument) {
+        case 'semanal':
+          var ps = ( (1-(this.getDesviacionMargen(argument)*-1)/100) * this.kpiSemanal );
+          return ps>this.kpiSemanal ? this.kpiSemanal :ps;
+          break;
+        case 'mensual':
+          var pm = ( (1-(this.getDesviacionMargen(argument)*-1)/100) * this.kpiMensual );
+          return pm>this.kpiMensual ? this.kpiMensual : pm;
+          break;
+        case 'anual':
+          var pa = ( (1-(this.getDesviacionMargen(argument)*-1)/100) * this.kpiAnual );
+          return pa>this.kpiAnual ? this.kpiAnual : pa;
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
+    res.prototype.getDesviacionMargen = function(argument){
+      return  this.getMargen(argument) - 19;
+    };
+
+    res.prototype.getKpiTotalMargen = function(){
+      return this.getKpiMargen('semanal') + this.getKpiMargen('mensual') + this.getKpiMargen('anual');
+    };  
 
     res.prototype.getKpiVentas = function(argument){
       switch (argument) {
         case 'semanal':
-          var ps = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiSemanal );
+          var ps = ( (1-(this.getDesviacionVentasTon(argument)*-1)/100) * this.kpiSemanal );
           return ps>this.kpiSemanal ? this.kpiSemanal :ps;
           break;
         case 'mensual':
-          var pm = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiMensual );
+          var pm = ( (1-(this.getDesviacionVentasTon(argument)*-1)/100) * this.kpiMensual );
           return pm>this.kpiMensual ? this.kpiMensual : pm;
           break;
         case 'anual':
-          var pa = ( (1-(this.getDesviacionVentas(argument)*-1)/100) * this.kpiAnual );
+          var pa = ( (1-(this.getDesviacionVentasTon(argument)*-1)/100) * this.kpiAnual );
           return pa>this.kpiAnual ? this.kpiAnual : pa;
           break;
         default:
