@@ -63,22 +63,22 @@
       </div>
 
       <div class="item row">
-        <span class="col">KPI</span>
-        <span class="col">{{indicador.metaSemanal | number : 0}}</span>
-        <span class="col">{{indicador.metaMensual}}</span>
-        <span class="col">{{indicador.metaAnual}}</span>
+        <span class="col">KPIs</span>
+        <span class="col">{{vm.indicador.getKpiVentas('semanal') | number : 3}}</span>
+        <span class="col">{{vm.indicador.kpiMensual | number : 3}}</span>
+        <span class="col">{{vm.indicador.kpiAnual | number : 3}}</span>
       </div>
 
       <div class="item item-avatar">
-        <h2 class="text-center">KPI: 2.5</h2>
+        <h2 class="text-center">KPI: 2.0</h2>
+        {{vm.indicador.kpiSemanal}}
       </div>
       
     </div>
    
 
   </ion-content>
-  <ion-footer-bar align-title="right" class="bar-stable">
-    
+  <ion-footer-bar align-title="right" class="bar-dark">
     <h1 class="title">Sem: {{vm.calendario.semana}} ({{vm.calendario.year}})</h1>
     <button class="button button-clear"></button>
   </ion-footer-bar>

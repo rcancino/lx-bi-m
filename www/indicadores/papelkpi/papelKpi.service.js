@@ -48,6 +48,23 @@
       }
     };
 
+    res.prototype.getKpiVentas = function(argument){
+      switch (argument) {
+        case 'semanal':
+          return ( this.kpiSemanal-(this.getDesviacionVentas(argument)*this.kpiSemanal)/100 );
+          break;
+        case 'mensual':
+          return ( this.kpiMensual-(this.getDesviacionVentas(argument)*this.kpiMensual)/100 );
+          break;
+        case 'anual':
+          return ( this.kpiAnual-(this.getDesviacionVentas(argument)*this.kpiAnual)/100 );
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
 
     return res;
     
