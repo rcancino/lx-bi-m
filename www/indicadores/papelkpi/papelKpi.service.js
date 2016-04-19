@@ -132,7 +132,51 @@
 
     res.prototype.getKpiTotalVentas = function(){
       return this.getKpiVentas('semanal') + this.getKpiVentas('mensual') + this.getKpiVentas('anual');
-    };  
+    };
+
+    res.prototype.getCostoKg = function(argument){
+      switch (argument) {
+        case 'semanal':
+          return  (this.costoSemanal / this.ventaSemanalTon ) / 1000
+          break;
+        case 'mensual':
+          return  (this.costoMensual / this.ventaMensualTon ) / 1000
+          break;
+        case 'anual':
+          return  (this.costoAnual / this.ventaAnualTon ) / 1000
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
+    res.prototype.getPrecioKg = function(argument){
+      switch (argument) {
+        case 'semanal':
+          return  (this.ventaSemanal / this.ventaSemanalTon ) / 1000
+          break;
+        case 'mensual':
+          return  (this.ventaMensual / this.ventaMensualTon ) / 1000
+          break;
+        case 'anual':
+          return  (this.ventaAnual / this.ventaAnualTon ) / 1000
+          break;
+        default:
+          return 0.0
+          break;
+      }
+    };
+
+    res.prototype.getMetaPrecioKg = function(argument){
+      return 22.75
+    };
+
+    res.prototype.getDesviacionPrecio = function(argument){
+      var dif = this.getMetaPrecioKg(argument) - this.getPrecioKg(argument);
+      var meta = this.getMetaPrecioKg(argument);
+      return  1 - (dif/meta)* 100;
+    };
 
 
     return res;

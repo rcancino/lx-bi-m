@@ -21,30 +21,30 @@
 
       <div class="item row" >
         <span class="col">Costo</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+        <span class="col">{{vm.indicador.getCostoKg('semanal') | number:2}}</span>
+        <span class="col">{{vm.indicador.getCostoKg('mensual') | number:2}}</span>
+        <span class="col">{{vm.indicador.getCostoKg('anual') | number:2}}</span>
+      </div>
+
+      <div class="item row" >
+        <span class="col">Precio</span>
+        <span class="col">{{vm.indicador.getPrecioKg('semanal') | number:2}}</span>
+        <span class="col">{{vm.indicador.getPrecioKg('mensual') | number:2}}</span>
+        <span class="col">{{vm.indicador.getPrecioKg('anual') | number:2}}</span>
       </div>
 
       <div class="item row" >
         <span class="col">Meta</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
-      </div>
-
-      <div class="item row" >
-        <span class="col">Diferencia</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+        <span class="col">{{vm.indicador.getMetaPrecioKg('semanal') | number:2}}</span>
+        <span class="col">{{vm.indicador.getMetaPrecioKg('mensual') | number:2}}</span>
+        <span class="col">{{vm.indicador.getMetaPrecioKg('anual') | number:2}}</span>
       </div>
 
       <div class="item row" >
         <span class="col">Dif (%)</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}} %</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}} %</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}} %</span>
+        <span class="col">{{vm.indicador.getDesviacionPrecio('semanal') | number:2}}%</span>
+        <span class="col">{{vm.indicador.getDesviacionPrecio('mensual') | number:2}}%</span>
+        <span class="col">{{vm.indicador.getDesviacionPrecio('anual') | number:2}}%</span>
       </div>
       
     </div>
