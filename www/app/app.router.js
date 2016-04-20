@@ -126,7 +126,7 @@
       views: {
         'indicadores-tab': {
           templateUrl: 'indicadores/papelkpi/papelKpiResumenInventarios.html',
-          controller: 'PapelKpiController',
+          controller: 'PapelKpiInventarioController',
           controllerAs: 'vm'
         }
       }

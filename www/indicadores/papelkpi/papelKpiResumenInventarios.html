@@ -8,41 +8,43 @@
   
   <ion-content>
     <div class="list card">
+      
       <div class="item item-divider text-center">
         {{vm.title}}
       </div>
 
       <div class="item  row">
         <span class="col"></span>
-        <span class="col">Semana</span>
-        <span class="col">Mes</span>
-        <span class="col">Año</span>
-      </div>
-      <div class="item row" >
-        <span class="col">Toneladas</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
-      </div>
-      <div class="item row" >
-        <span class="col">Mínimo</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
-      </div>
-      <div class="item row" >
+        <span class="col">Ton</span>
+        <span class="col">Mín</span>
         <span class="col">Meta</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+        <span class="col">Msc</span>
+        <span class="col">Desv</span>
+        <span class="col">KPI</span>
       </div>
-      <div class="item row" >
-        <span class="col">Máximo</span>
-        <span class="col">{{vm.indicador.costoKgSemanal | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgMensual | number:2}}</span>
-        <span class="col">{{vm.indicador.costoKgAnual | number:2}}</span>
+      <div class="item  row">
+        <span class="col">Total</span>
+        <span class="col">{{vm.indicador.existencias}}</span>
+        <span class="col">{{vm.indicador.minimo}}</span>
+        <span class="col">{{vm.indicador.meta}}</span>
+        <span class="col">{{vm.indicador.maximo}}</span>
+        <span class="col">{{vm.indicador.desviacion}}</span>
+        <span class="col">{{vm.indicador.kpi}}</span>
       </div>
       
+      <div class="item item-divider text-center">
+        Alcances
+      </div>
+      <div class="item  row">
+        <span class="col">Nacional</span>
+        <span class="col">Importado</span>
+        
+      </div>
+      <div class="item  row">
+        <span class="col">Total</span>
+        <span class="col">{{vm.indicador.existencias}}</span>
+        <span class="col">{{vm.indicador.minimo}}</span>
+      </div>
     </div>
    
 
