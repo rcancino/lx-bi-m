@@ -173,9 +173,11 @@
     };
 
     res.prototype.getDesviacionPrecio = function(argument){
-      var dif = this.getMetaPrecioKg(argument) - this.getPrecioKg(argument);
-      var meta = this.getMetaPrecioKg(argument);
-      return  1 - (dif/meta)* 100;
+      //var dif = this.getMetaPrecioKg(argument) - this.getPrecioKg(argument);
+      //var meta = this.getMetaPrecioKg(argument);
+      //return  1 - (dif/meta) * 100;
+      var dif = this.getPrecioKg(argument)/this.getMetaPrecioKg(argument) - 1 
+      return dif * 100
     };
 
 
