@@ -1,7 +1,16 @@
 <ion-view >
   <ion-nav-title><i class="icon ion-social-buffer "></i> Papel KPIs</ion-nav-title>
+  
+  <ion-header-bar align-title="left" class="bar-dark bar-subheader">
+    <h1 class="title">Semana: {{vm.calendario.semana}} ()</h1>
+    <div class="buttons">
+      <button class="button icon-right ion-ios-calendar "
+      ng-click="vm.mostrarCalendarios($event)"></button>
+    </div>
+  </ion-header-bar>
+
   <ion-content>
-    <ion-list type="card">
+    <ion-list>
       <ion-item ui-sref="papelkpiResumen" 
         class=" item-icon-right" > 
           Resumen
@@ -40,4 +49,10 @@
 
     </ion-list>
   </ion-content>
+  
+  <ion-footer-bar align-title="left" class="bar-dark">
+    <h3 class="title small">Ultima act:</h3>
+    <button class="button  button-icon ion-ios-reload pull-right"></button>
+  </ion-footer-bar>
+ 
 </ion-view>

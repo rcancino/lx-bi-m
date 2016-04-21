@@ -39,6 +39,8 @@
         'indicadores-tab': {
           url: '/papelkpi',
           templateUrl: 'indicadores/papelkpi/papelKpis.html'
+          controller: 'PapelKpiListController',
+          controllerAs: 'vm'
         }
       }
     })
